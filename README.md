@@ -64,17 +64,7 @@ This compiler (from `toy_compiler_trojan.c`) contains the malicious logic.
 gcc -Wall -w toy_compiler_trojan.c -o toy_compiler
 ```
 
-### b. Compile the Innocent Compiler Source
-
-This version is clean in appearance.
-
-**Compile:**
-
-```bash
-gcc -Wall -w toy_compiler_clean.c -o toy_compiler_clean
-```
-
-### c. Compile the Calculator Normally
+### b. Compile the Calculator Normally
 
 This is the benign version of the calculator.
 
@@ -92,7 +82,7 @@ gcc -Wall -w calc.c -o calc
 
 Type an expression like `1+1` (or `1 + 1`). The result should be `2`.
 
-### d. Compile the Calculator Using the Trojaned Compiler
+### c. Compile the Calculator Using the Trojaned Compiler
 
 Using the trojaned compiler injects the backdoor into the calculator.
 
@@ -110,7 +100,7 @@ Using the trojaned compiler injects the backdoor into the calculator.
 
 Type `1+1`. The result should now be `3`.
 
-### e. Self-Replication: Infected Compiler from Innocent Source
+### d. Self-Replication: Infected Compiler from Innocent Source
 
 Demonstrate the self-replicating effect by using the trojaned compiler to compile the innocent compiler source. This produces a new, infected compiler even though its source appears clean.
 
@@ -143,7 +133,7 @@ Typing `1+1` should yield `3`.
 - **toy_compiler_trojan.c:** A trojaned compiler that injects a hidden backdoor.
 - **toy_compiler_clean.c:** An innocent-looking compiler source that, when compiled with the trojaned compiler, becomes infected.
 
-This demo embodies Thompson’s insight: even if source code appears clean, a compiler can hide and perpetuate malicious behavior.
+This demo embodies Thompson’s insight: even if source code is clean, a precompiled binary (compiler) can hide and perpetuate malicious behavior.
 
 ---
 
