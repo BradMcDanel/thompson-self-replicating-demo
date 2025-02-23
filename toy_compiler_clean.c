@@ -4,7 +4,7 @@
 
 void compileFile(const char *sourceFile, const char *outputFile) {
     char cmd[256];
-    snprintf(cmd, sizeof(cmd), "./toy_compiler %s %s", sourceFile, outputFile);
+    snprintf(cmd, sizeof(cmd), "gcc %s -o %s", sourceFile, outputFile);
     system(cmd);
 }
 
